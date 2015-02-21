@@ -1,0 +1,24 @@
+*
+  box-sizing border-box
+
+html, body
+  font-family "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif
+  font-weight 300
+  margin 0
+  padding 0
+  color black
+
+.container
+  padding 20px 0
+  > *
+    margin-left auto
+    margin-right auto
+
+@media (min-width: 560px)
+  .container
+    > *
+      width 560px
+
+.container--inverse
+  background-color black
+  color white
