@@ -17,7 +17,7 @@ Icon = component({
         }
       }, [
         svg('use', {
-          'xlink:href': "/dist/weding-1.0.0.min.svg#" + params.i
+          'xlink:href': "/dist/wedding-1.0.0.min.svg#" + params.i
         })
       ])
     ]);

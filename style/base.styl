@@ -1,6 +1,26 @@
 html, body, .wrapper
   height 100%
   background-color $background-primary
-  color $foreground-primary
-  font-family "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif
-  font-weight 300
+  color $brand-primary
+  // font-family "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif
+  // font-weight 300
+  font-family: 'Lora', serif;
+  text-align center
+
+h1
+  margin-top 10vw
+  margin-bottom 5vw
+  font-size 4vw
+
+@media (min-width: 640px)
+  h1
+    margin-top 64px
+    margin-bottom 32px
+    font-size 25.5px
+
+svg.title
+  height 23.4vw
+
+@media (min-width: 640px)
+  svg.title
+    height 150px

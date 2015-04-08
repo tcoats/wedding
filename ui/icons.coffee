@@ -6,7 +6,7 @@ Icon = component
   render: (state, params) ->
     dom 'span', [
       svg 'svg', { attributes: role: 'img', class: 'icon' }, [
-        svg 'use', { 'xlink:href': "/dist/weding-1.0.0.min.svg##{params.i}" }
+        svg 'use', { 'xlink:href': "/dist/wedding-1.0.0.min.svg##{params.i}" }
       ]
     ]
 

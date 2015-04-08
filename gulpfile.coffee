@@ -12,7 +12,7 @@ livereload = require 'gulp-livereload'
 # interactive builds
 gulp.task 'watch', ['watchcoffee'], ->
   livereload.listen()
-  gulp.watch 'components/svg/*.svg', ['svg']
+  gulp.watch 'svg/*.svg', ['svg']
   gulp.watch [
     'components/*.styl',
     'style/*.styl'], ['style']
