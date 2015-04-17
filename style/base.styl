@@ -1,15 +1,45 @@
 html, body, .wrapper
-  height 100%
   background-color $background-primary
   color $brand-primary
   // font-family "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif
   // font-weight 300
-  font-family: 'Lora', serif;
-  text-align center
+  font-family: serif;
 
 h1
+  text-align center
   margin-top 10vw
   margin-bottom 5vw
+  font-size 4vw
+  font-weight normal
+
+label
+  font-weight normal
+
+input[type=text]
+  border 0
+  border-bottom 1px solid $brand-primary
+  padding-left 10px
+  padding-right 10px
+  margin 3px
+  border-radius 0
+  
+  &:focus
+    outline 0
+
+input[type=checkbox]
+  display none
+input[type=checkbox] + span
+  display inline-block
+  border 1px solid $brand-primary
+  width 32px
+  height 32px
+  margin 5px 10px 15px 5px
+  border-radius 16px
+  cursor pointer
+  vertical-align middle
+input[type=checkbox]:checked + span
+  background-color $brand-primary
+label span
   font-size 4vw
 
 @media (min-width: 640px)
@@ -18,9 +48,11 @@ h1
     margin-bottom 32px
     font-size 25.5px
 
-svg.title
+.title
   height 23.4vw
+  width 100vw
 
 @media (min-width: 640px)
-  svg.title
+  .title
     height 150px
+    width 640px
