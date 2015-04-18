@@ -37,6 +37,7 @@
   "dependencies": {
     "bootstrap-styl": "4.0.3",
     "compression": "1.4.3",
+    "cson": "^3.0.1",
     "express": "5.0.0-alpha.1",
     "extend": "2.0.0",
     "flexy-grid": "0.0.1",

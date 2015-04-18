@@ -1,0 +1,29 @@
+name: 'Wolf'
+
+# sdasd
+'Pre Wedding Celebrations':
+  going: yes
+  attending: [
+    'Wolf'
+    ''
+  ]
+
+
+
+'Wedding Ceremony':
+  going: no
+  attending: [
+    'Wolf'
+    ''
+    ''
+    ''
+    ''
+  ]
+
+
+'Wedding Reception':
+  going: no
+  attending: [
+    'Wolf'
+    ''
+  ]

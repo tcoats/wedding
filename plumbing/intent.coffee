@@ -18,9 +18,17 @@ hub.all (e, description, p, cb) ->
     console.log "+ #{description}"
   cb()
 
+hub.every '{eventtitle} RSVP {attending}', (p, cb) ->
+  
+  cb()
+
+hub.every '{eventtitle} attendee {index} is {name}', (p, cb) ->
+  
+  cb()
+
 # Navigation
 hub.every 'navigate to the default page', (p, cb) ->
-  scene.update page: name: 'default'
+  scene.update page: name: 'default', code: p.code
   cb()
 
 hub.every 'navigation error, {pathname} not found', (p, cb) ->

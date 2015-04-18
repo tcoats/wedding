@@ -21,10 +21,12 @@ gulp.task('watch', ['watchcoffee'], function() {
   livereload.listen();
   gulp.watch('svg/*.svg', ['svg']);
   gulp.watch(['components/*.styl', 'style/*.styl'], ['style']);
-  return gulp.watch(['index.html', 'components/*.html', 'plumbing/*.html'], ['html']);
+  return gulp.watch(['index.html', 'components/*.html', 'data/*.cson', 'plumbing/*.html'], ['html']);
 });
 
-gulp.task('default', ['svg', 'style', 'coffee']);
+gulp.task('build', ['svg', 'style', 'coffee']);
+
+gulp.task('default', ['watch']);
 
 svgmin = require('gulp-svgmin');
 

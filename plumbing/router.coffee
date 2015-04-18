@@ -4,8 +4,8 @@ hub = require 'odo-hub'
 page = require 'page'
 
 # Here is our router. This works on first request and any 'virtual' requests from then on. The server is normally configured to return the same index.html file for all urls that don't match physical files so a manual refresh also works. It's pretty cool.
-page '/', ->
-  hub.emit 'navigate to the default page'
+page '/:invite', (e) ->
+  hub.emit 'navigate to the default page', e.params
 page (details) ->
   hub.emit 'navigation error, {pathname} not found', details
 

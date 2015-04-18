@@ -24,10 +24,19 @@ hub.all(function(e, description, p, cb) {
   return cb();
 });
 
+hub.every('{eventtitle} RSVP {attending}', function(p, cb) {
+  return cb();
+});
+
+hub.every('{eventtitle} attendee {index} is {name}', function(p, cb) {
+  return cb();
+});
+
 hub.every('navigate to the default page', function(p, cb) {
   scene.update({
     page: {
-      name: 'default'
+      name: 'default',
+      code: p.code
     }
   });
   return cb();

@@ -19,10 +19,12 @@ gulp.task 'watch', ['watchcoffee'], ->
   gulp.watch [
     'index.html',
     'components/*.html',
+    'data/*.cson',
     'plumbing/*.html'], ['html']
 
 # build everything
-gulp.task 'default', ['svg', 'style', 'coffee']
+gulp.task 'build', ['svg', 'style', 'coffee']
+gulp.task 'default', ['watch']
 
 # svg
 svgmin = require 'gulp-svgmin'
