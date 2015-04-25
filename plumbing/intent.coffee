@@ -26,7 +26,12 @@ hub.every '{eventid} RSVP {attending}', (p, cb) ->
   cb()
 
 hub.every '{eventid} attendee {index} is {name}', (p, cb) ->
-  
+  attending = scene.state().invite[p.eventid].attending.slice 0
+  attending[p.index] = name
+  delta = invite: {}
+  delta.invite[p.eventid] = attending: attending
+  transaction = scene.layer delta
+  scene.update()
   cb()
 
 # Navigation
