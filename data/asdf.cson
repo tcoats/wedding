@@ -1,16 +1,13 @@
-name: 'Wolf'
+to: 'Wolf'
 
-# sdasd
-'Pre Wedding Celebrations':
+'prewedding':
   going: yes
   attending: [
     'Wolf'
     ''
   ]
 
-
-
-'Wedding Ceremony':
+'ceremony':
   going: no
   attending: [
     'Wolf'
@@ -20,8 +17,7 @@ name: 'Wolf'
     ''
   ]
 
-
-'Wedding Reception':
+'reception':
   going: no
   attending: [
     'Wolf'

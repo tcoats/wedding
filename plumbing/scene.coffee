@@ -1,6 +1,4 @@
 { component, widget } = require 'odojs'
-inject = require 'injectinto'
-ql = require 'odoql/ql'
 odoql = require 'odoql/plugin'
 relay = require 'odo-relay'
 

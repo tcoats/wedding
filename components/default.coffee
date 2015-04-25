@@ -2,9 +2,10 @@
 inject = require 'injectinto'
 ql = require 'odoql/ql'
 hub = require 'odo-hub'
+form2js = require '../plumbing/form2js'
 
 rsvp = component render: (state, params) ->
-  nameinput = (name, cb) ->
+  nameinput = (index, name, cb) ->
     dom 'div', [
       dom 'input',
         onkeyup: (e) ->
@@ -12,6 +13,7 @@ rsvp = component render: (state, params) ->
         onblur: (e) ->
           cb e.target.value
         attributes:
+          name: "#{params.eventid}.attending[#{index}]"
           type: 'text'
           autocomplete: 'off'
           autocorrect: 'off'
@@ -22,14 +24,16 @@ rsvp = component render: (state, params) ->
   items = []
   for name, index in state.attending
     do (index) ->
-      items.push nameinput name, (newname) ->
-        hub.emit "{eventtitle} attendee {index} is {name}",
-          eventtitle: params.eventtitle
+      items.push nameinput index, name, (newname) ->
+        hub.emit "{eventid} attendee {index} is {name}",
+          eventid: params.eventid
           index: index
           name: newname
   
   checkboxattrs =
+    name: "#{params.eventid}.going"
     type: 'checkbox'
+    value: 'true'
   if state.going
     checkboxattrs.checked = 'checked'
   contents = [
@@ -38,34 +42,50 @@ rsvp = component render: (state, params) ->
       dom 'input',
         attributes: checkboxattrs
         onchange: (e) ->
-          hub.emit '{eventtitle} RSVP {attending}',
-            eventtitle: params.eventtitle
+          hub.emit '{eventid} RSVP {attending}',
+            eventid: params.eventid
             attending: e.target.checked
       dom 'span'
     ]
   ]
-  if state.going
-    contents.push dom 'div', [
-      dom 'h4', 'Who is attending?'
-      dom 'div', items
-    ]
+  whoattrs = {}
+  if not state.going
+    whoattrs.style = 'display: none;'
+  
+  contents.push dom 'div', attributes: whoattrs, [
+    dom 'h4', 'Who is attending?'
+    dom 'div', items
+  ]
   dom 'div', contents
 
 inject.bind 'page:default', component
   query: (params) ->
     invite: ql.query 'invites', 'asdf'
   render: (state, params) ->
+    submit = (e) ->
+      data = form2js e.target, null, no
+      console.log JSON.stringify data, null, 2
+      e.preventDefault()
     titileattr =
       attributes:
         class: 'title'
         src: '/title.png'
     dom 'div', { attributes: class: 'wrapper' }, [
-      dom 'h1', state.invite.name
+      dom 'h1', state.invite.to
       dom 'img', titileattr
-      rsvp state.invite['Pre Wedding Celebrations'],
-        eventtitle: 'Pre Wedding Celebrations'
-      rsvp state.invite['Wedding Ceremony'],
-        eventtitle: 'Wedding Ceremony'
-      rsvp state.invite['Wedding Reception'],
-        eventtitle: 'Wedding Reception'
+      dom 'form', { onsubmit: submit }, [
+        rsvp state.invite['prewedding'],
+          eventid: 'prewedding'
+          eventtitle: 'Pre Wedding Celebrations'
+        rsvp state.invite['ceremony'],
+          eventid: 'ceremony'
+          eventtitle: 'Wedding Ceremony'
+        rsvp state.invite['reception'],
+          eventid: 'reception'
+          eventtitle: 'Wedding Reception'
+        dom 'input',
+          attributes:
+            type: 'submit'
+            value: 'Go'
+      ]
     ]

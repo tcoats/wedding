@@ -24,11 +24,20 @@ hub.all(function(e, description, p, cb) {
   return cb();
 });
 
-hub.every('{eventtitle} RSVP {attending}', function(p, cb) {
+hub.every('{eventid} RSVP {attending}', function(p, cb) {
+  var delta, transaction;
+  delta = {
+    invite: {}
+  };
+  delta.invite[p.eventid] = {
+    going: p.attending
+  };
+  transaction = scene.layer(delta);
+  scene.update();
   return cb();
 });
 
-hub.every('{eventtitle} attendee {index} is {name}', function(p, cb) {
+hub.every('{eventid} attendee {index} is {name}', function(p, cb) {
   return cb();
 });
 

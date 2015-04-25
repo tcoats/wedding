@@ -1,1 +1,25 @@
-name: 'Awesome Dude'
+to: 'Awesome Dude'
+
+'prewedding':
+  going: yes
+  attending: [
+    'Wolf'
+    ''
+  ]
+
+'ceremony':
+  going: no
+  attending: [
+    'Wolf'
+    ''
+    ''
+    ''
+    ''
+  ]
+
+'reception':
+  going: no
+  attending: [
+    'Wolf'
+    ''
+  ]

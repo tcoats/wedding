@@ -18,11 +18,14 @@ hub.all (e, description, p, cb) ->
     console.log "+ #{description}"
   cb()
 
-hub.every '{eventtitle} RSVP {attending}', (p, cb) ->
-  
+hub.every '{eventid} RSVP {attending}', (p, cb) ->
+  delta = invite: {}
+  delta.invite[p.eventid] = going: p.attending
+  transaction = scene.layer delta
+  scene.update()
   cb()
 
-hub.every '{eventtitle} attendee {index} is {name}', (p, cb) ->
+hub.every '{eventid} attendee {index} is {name}', (p, cb) ->
   
   cb()
 
