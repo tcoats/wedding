@@ -3,6 +3,7 @@ inject = require 'injectinto'
 ql = require 'odoql/ql'
 hub = require 'odo-hub'
 form2js = require '../plumbing/form2js'
+emblem = require './emblem'
 
 rsvp = component render: (state, params) ->
   nameinput = (index, name, cb) ->
@@ -71,21 +72,29 @@ inject.bind 'page:default', component
         class: 'title'
         src: '/title.png'
     dom 'div', { attributes: class: 'wrapper' }, [
-      dom 'h1', state.invite.to
-      dom 'img', titileattr
-      dom 'form', { onsubmit: submit }, [
-        rsvp state.invite['prewedding'],
-          eventid: 'prewedding'
-          eventtitle: 'Pre Wedding Celebrations'
-        rsvp state.invite['ceremony'],
-          eventid: 'ceremony'
-          eventtitle: 'Wedding Ceremony'
-        rsvp state.invite['reception'],
-          eventid: 'reception'
-          eventtitle: 'Wedding Reception'
-        dom 'input',
-          attributes:
-            type: 'submit'
-            value: 'Go'
+      dom 'div', { attributes: class: 'nb nb-top' }, [
+        emblem()
+      ]
+      dom 'div', { attributes: class: 'nb nb-section' }, [
+        dom 'h1', state.invite.to
+        # dom 'img', titileattr
+        dom 'form', { onsubmit: submit }, [
+          rsvp state.invite['prewedding'],
+            eventid: 'prewedding'
+            eventtitle: 'Pre Wedding Celebrations'
+          rsvp state.invite['ceremony'],
+            eventid: 'ceremony'
+            eventtitle: 'Wedding Ceremony'
+          rsvp state.invite['reception'],
+            eventid: 'reception'
+            eventtitle: 'Wedding Reception'
+          dom 'input',
+            attributes:
+              type: 'submit'
+              value: 'Go'
+        ]
+      ]
+      dom 'div', { attributes: class: 'nb nb-bottom' }, [
+        emblem()
       ]
     ]
