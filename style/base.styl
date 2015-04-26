@@ -4,38 +4,39 @@ html, body
   font-family: serif;
 
 body
-  border 10px solid $brand-highlight
+  border 2vw solid $brand-highlight
 
 html
   background-image url('/style/pattern.png')
   background-size 10vw 10vw
 
 .wrapper
-  margin -10px
+  margin -2vw
 
 .nb-top
   background $background-primary
-  clip-path polygon(50vw 0vw, 85vw 10vw, 85vw 15vw, 15vw 15vw, 15vw 10vw)
+  clip-path polygon(50vw 0vw, 85vw 10vw, 85vw 16vw, 15vw 16vw, 15vw 10vw)
   height 15vw
-  margin-top 10vw
+  margin-top 7vw
 
 .nb-section
+  //border 10px solid $brand-highlight
   background $background-primary
-  padding 1.5em 15vw
-  clip-path polygon(10vw -1%, 90vw -1%, 90vw 101%, 10vw 101%)
+  padding 1.5em 5vw
+  margin 0 10vw
+  //clip-path polygon(10vw -1%, 90vw -1%, 90vw 101%, 10vw 101%)
 
 .nb-bottom
   background $background-primary
-  clip-path polygon(85vw 0vw, 85vw 5vw, 50vw 15vw, 15vw 5vw, 15vw 0vw)
+  clip-path polygon(85vw -1vw, 85vw 5vw, 50vw 15vw, 15vw 5vw, 15vw -1vw)
   height 15vw
-  margin-bottom 10vw
+  margin-bottom 7vw
 
 .nb + .nb
   margin-top 0
 
 .emblem
   width 100%
-  height 12vw
   padding-top 2.5vw
 
 * + *
