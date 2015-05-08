@@ -58,7 +58,8 @@ minifycss = require 'gulp-minify-css'
 gulp.task 'style', ->
   gulp.src 'style/index.styl'
     .pipe sourcemaps.init()
-    .pipe stylus()
+    .pipe stylus
+      'include css': yes
     .pipe concat "#{npmpackage.name}-#{npmpackage.version}.min.css"
     .pipe autoprefixer browsers: ['last 2 versions']
     .pipe minifycss()

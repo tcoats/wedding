@@ -35,7 +35,7 @@ rsvp = component({
             type: 'text',
             autocomplete: 'off',
             autocorrect: 'off',
-            autocapitalize: 'off',
+            autocapitalize: 'words',
             value: name
           }
         })
@@ -66,7 +66,7 @@ rsvp = component({
     }
     contents = [
       dom('label', [
-        dom('span', params.eventtitle), dom('input', {
+        dom('input', {
           attributes: checkboxattrs,
           onchange: function(e) {
             return hub.emit('{eventid} RSVP {attending}', {
@@ -74,16 +74,18 @@ rsvp = component({
               attending: e.target.checked
             });
           }
-        }), dom('span')
+        }), dom('span'), dom('span', params.eventtitle)
       ])
     ];
-    whoattrs = {};
+    whoattrs = {
+      "class": 'attending'
+    };
     if (!state.going) {
       whoattrs.style = 'display: none;';
     }
     contents.push(dom('div', {
       attributes: whoattrs
-    }, [dom('h4', 'Who is attending?'), dom('div', items)]));
+    }, [dom('h3', 'Who is attending?'), dom('div', items)]));
     return dom('div', contents);
   }
 });
@@ -117,7 +119,7 @@ inject.bind('page:default', component({
         attributes: {
           "class": 'large'
         }
-      }, 'You are invited to the Wedding of Thomas Coats & Harvinder Kaur'), state.invite['prewedding'] != null ? dom('div', [
+      }, ['You are invited to the Wedding of ', dom('br'), 'Thomas Coats & Harvinder Kaur']), state.invite['prewedding'] != null ? dom('div', [
         dom('h2', 'Maiyan'), dom('pre', ['10am - 10pm\nFriday 2nd October\nBow Street Studio Apartments']), dom('p', 'The Punjabi wedding preparation ceremonies are known as Maiyan. We will be performing Vatna, Mehndi, Jaggo and Choora. Sangeet, Giddha and Bhangra will be present throughout the day - singing and dancing.'), dom('p', [
           'Everyone celebrates differently, some of these ceremonies are ', dom('a', {
             attributes: {
@@ -130,7 +132,7 @@ inject.bind('page:default', component({
       }, [
         rsvp(state.invite['prewedding'], {
           eventid: 'prewedding',
-          eventtitle: 'RSVP to Maiyan (wedding preparation ceremonies)'
+          eventtitle: 'RSVP to Maiyan'
         }), rsvp(state.invite['ceremony'], {
           eventid: 'ceremony',
           eventtitle: 'RSVP to Anand Karaj (wedding ceremony)'
@@ -140,12 +142,15 @@ inject.bind('page:default', component({
         }), rsvp(state.invite['breakfast'], {
           eventid: 'breakfast',
           eventtitle: 'RSVP to Breakfast'
-        }), dom('label', [dom('span', 'Comments'), dom('textarea')]), dom('input', {
+        }), dom('label', {
           attributes: {
-            type: 'submit',
-            value: 'Submit'
+            "class": 'comments'
           }
-        })
+        }, [dom('span', 'Comments'), dom('textarea')]), dom('button', {
+          attributes: {
+            type: 'submit'
+          }
+        }, 'Save RSVP')
       ])
     ]);
   }

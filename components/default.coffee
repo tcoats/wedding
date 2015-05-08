@@ -20,7 +20,7 @@ rsvp = component render: (state, params) ->
           type: 'text'
           autocomplete: 'off'
           autocorrect: 'off'
-          autocapitalize: 'off'
+          autocapitalize: 'words'
           value: name
     ]
   
@@ -41,7 +41,6 @@ rsvp = component render: (state, params) ->
     checkboxattrs.checked = 'checked'
   contents = [
     dom 'label', [
-      dom 'span', params.eventtitle
       dom 'input',
         attributes: checkboxattrs
         onchange: (e) ->
@@ -49,14 +48,15 @@ rsvp = component render: (state, params) ->
             eventid: params.eventid
             attending: e.target.checked
       dom 'span'
+      dom 'span', params.eventtitle
     ]
   ]
-  whoattrs = {}
+  whoattrs = class: 'attending'
   if not state.going
     whoattrs.style = 'display: none;'
   
   contents.push dom 'div', attributes: whoattrs, [
-    dom 'h4', 'Who is attending?'
+    dom 'h3', 'Who is attending?'
     dom 'div', items
   ]
   dom 'div', contents
@@ -77,7 +77,11 @@ inject.bind 'page:default', component
       emblem()
       dom 'h1', state.invite.to
       
-      dom 'p', { attributes: class: 'large' }, 'You are invited to the Wedding of Thomas Coats & Harvinder Kaur'
+      dom 'p', { attributes: class: 'large' }, [
+        'You are invited to the Wedding of '
+        dom 'br'
+        'Thomas Coats & Harvinder Kaur'
+      ]
       
       if state.invite['prewedding']?
         dom 'div', [
@@ -151,7 +155,7 @@ inject.bind 'page:default', component
       dom 'form', { onsubmit: submit }, [
         rsvp state.invite['prewedding'],
           eventid: 'prewedding'
-          eventtitle: 'RSVP to Maiyan (wedding preparation ceremonies)'
+          eventtitle: 'RSVP to Maiyan'
         rsvp state.invite['ceremony'],
           eventid: 'ceremony'
           eventtitle: 'RSVP to Anand Karaj (wedding ceremony)'
@@ -161,13 +165,10 @@ inject.bind 'page:default', component
         rsvp state.invite['breakfast'],
           eventid: 'breakfast'
           eventtitle: 'RSVP to Breakfast'
-        dom 'label', [
+        dom 'label', { attributes: class: 'comments' }, [
           dom 'span', 'Comments'
           dom 'textarea'
         ]
-        dom 'input',
-          attributes:
-            type: 'submit'
-            value: 'Submit'
+        dom 'button', { attributes: type: 'submit' }, 'Save RSVP'
       ]
     ]

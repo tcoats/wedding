@@ -48,7 +48,9 @@ autoprefixer = require('gulp-autoprefixer');
 minifycss = require('gulp-minify-css');
 
 gulp.task('style', function() {
-  return gulp.src('style/index.styl').pipe(sourcemaps.init()).pipe(stylus()).pipe(concat(npmpackage.name + "-" + npmpackage.version + ".min.css")).pipe(autoprefixer({
+  return gulp.src('style/index.styl').pipe(sourcemaps.init()).pipe(stylus({
+    'include css': true
+  })).pipe(concat(npmpackage.name + "-" + npmpackage.version + ".min.css")).pipe(autoprefixer({
     browsers: ['last 2 versions']
   })).pipe(minifycss()).pipe(sourcemaps.write('./')).pipe(gulp.dest('dist')).pipe(livereload());
 });
