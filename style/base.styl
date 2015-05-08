@@ -4,41 +4,17 @@ html, body
   font-family serif
   min-height 100%
 
-body
-  border 2vw solid $brand-highlight
-
 html
   background-image url('/style/pattern.png')
-  background-size 10vw 10vw
+  background-position center top
+  background-size 60px 60px
 
 .wrapper
-  margin -2vw
-
-.nb-top
-  background $background-primary
-  clip-path polygon(50vw 0vw, 85vw 10vw, 85vw 16vw, 15vw 16vw, 15vw 10vw)
-  height 15vw
-  margin-top 7vw
-
-.nb-section
-  //border 10px solid $brand-highlight
-  background $background-primary
-  padding 1.5em 5vw
-  margin 0 10vw
-  //clip-path polygon(10vw -1%, 90vw -1%, 90vw 101%, 10vw 101%)
-
-.nb-bottom
-  background $background-primary
-  clip-path polygon(85vw -1vw, 85vw 5vw, 50vw 15vw, 15vw 5vw, 15vw -1vw)
-  height 15vw
-  margin-bottom 7vw
-
-.nb + .nb
-  margin-top 0
-
-.emblem
-  width 100%
-  height 15vw
+  background-color $background-primary
+  width 640px
+  margin 35px auto 240px auto
+  padding 15px
+  border 5px solid $brand-highlight
 
 * + *
   margin-top 1.5em
@@ -48,13 +24,19 @@ p
 
   + p
     margin-top 0
-    text-indent 2em
+
+p.large
+  font-size 28px
+  text-align center
+
+li + li
+  margin-top 0
+
+.emblem
+  width 100%
 
 h1
   text-align center
-  margin-top 10vw
-  margin-bottom 5vw
-  font-size 4vw
   font-weight normal
 
 label
@@ -82,22 +64,16 @@ input[type=checkbox] + span
   border-radius 16px
   cursor pointer
   vertical-align middle
+  font-size 12px
+  font-family 'Helvetica Neue', Helvetica, Arial, sans-serif
+  text-align center
+  line-height 32px
+  &:before
+    content 'NO'
 input[type=checkbox]:checked + span
   background-color $brand-primary
+  color white
+  &:before
+    content 'YES'
 label span
-  font-size 4vw
-
-@media (min-width: 640px)
-  h1
-    margin-top 64px
-    margin-bottom 32px
-    font-size 25.5px
-
-// .title
-//   height 23.4vw
-//   width 100vw
-
-// @media (min-width: 640px)
-//   .title
-//     height 150px
-//     width 640px
+  font-size 20px

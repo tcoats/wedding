@@ -23,3 +23,10 @@ to: 'Wolf'
     'Wolf'
     ''
   ]
+
+'breakfast':
+  going: no
+  attending: [
+    'Wolf'
+    ''
+  ]

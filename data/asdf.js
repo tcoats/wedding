@@ -12,5 +12,9 @@
   'reception': {
     going: false,
     attending: ['Wolf', '']
+  },
+  'breakfast': {
+    going: false,
+    attending: ['Wolf', '']
   }
 });
