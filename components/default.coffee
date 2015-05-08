@@ -86,7 +86,13 @@ inject.bind 'page:default', component
       if state.invite['prewedding']?
         dom 'div', [
           dom 'h2', 'Maiyan'
-          dom 'pre', ['10am - 10pm\nFriday 2nd October\nBow Street Studio Apartments']
+          dom 'p', [
+            '10am - 10pm'
+            dom 'br'
+            'Friday 2nd October'
+            dom 'br'
+            dom 'a', { attributes: href: 'https://www.google.co.nz/maps/place/Bow+Street+Studios/@-37.799761,174.867363,17z/data=!3m1!4b1!4m2!3m1!1s0x6d12d41762787c37:0xdaa5f7641ec6868c'}, 'Bow Street Studios'
+          ]
           dom 'p', 'The Punjabi wedding preparation ceremonies are known as Maiyan. We will be performing Vatna, Mehndi, Jaggo and Choora. Sangeet, Giddha and Bhangra will be present throughout the day - singing and dancing.'
           dom 'p', [
             'Everyone celebrates differently, some of these ceremonies are '
@@ -108,6 +114,13 @@ inject.bind 'page:default', component
       if state.invite['ceremony']?
         dom 'div', [
           dom 'h2', 'Anand Karaj'
+          dom 'p', [
+            '8:30am - 1pm'
+            dom 'br'
+            'Saturday 3rd October'
+            dom 'br'
+            dom 'a', { attributes: href: 'https://www.google.co.nz/maps/place/New+Zealand+Sikh+Society+Hamilton/@-37.71328,175.211584,17z/data=!3m1!4b1!4m2!3m1!1s0x6d6d23350d4539e1:0x16a1c12e4ab4036a'}, 'Te Rapa Sikh Gurdwara'
+          ]
           dom 'pre', '8:30am - 1pm\nSaturday 3rd October\nTe Rapa Sikh Gurdwara'
           dom 'p', 'Anand Karaj literally translates as "Blissful Union" and is the Sikh marriage ceremony in which two individuals are joined in an equal partnership. A Sikh wedding involves greetings, breakfast, the ceremony, lunch and farewell.'
           dom 'p', 'Milni the bride’s side act as hosts and welcome the groom’s side to the temple and to the wedding. The bride herself remains in a back room of the temple until the beginning of the ceremony.'
@@ -139,7 +152,13 @@ inject.bind 'page:default', component
       if state.invite['reception']?
         dom 'div', [
           dom 'h2', 'Wedding Reception'
-          dom 'pre', '5pm - Late\nSaturday 3rd October\nBow Street Studio Apartments'
+          dom 'p', [
+            '5pm - Late'
+            dom 'br'
+            'Saturday 3rd October'
+            dom 'br'
+            dom 'a', { attributes: href: 'https://www.google.co.nz/maps/place/Bow+Street+Studios/@-37.799761,174.867363,17z/data=!3m1!4b1!4m2!3m1!1s0x6d12d41762787c37:0xdaa5f7641ec6868c'}, 'Bow Street Studios'
+          ]
         ]
       else
         dom 'span'
@@ -147,7 +166,13 @@ inject.bind 'page:default', component
       if state.invite['breakfast']?
         dom 'div', [
           dom 'h2', 'Breakfast with Newlyweds'
-          dom 'pre', '10am\nSunday 4th October\nRaglan Roast'
+          dom 'p', [
+            '10am'
+            dom 'br'
+            'Sunday 4th October'
+            dom 'br'
+            dom 'a', { attributes: href: 'https://www.google.co.nz/maps/place/Raglan+Roast/@-37.800179,174.868397,17z/data=!3m1!4b1!4m2!3m1!1s0x6d12d4176d6a36f9:0x3a3e2a740ee1d2a5'}, 'Raglan Roast'
+          ]
         ]
       
       dom 'hr'
