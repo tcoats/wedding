@@ -1,9 +1,11 @@
 express = require 'express'
 compression = require 'compression'
+bodyParser = require 'body-parser'
 path = require 'path'
 ql = require 'odoql/ql'
 async = require 'odo-async'
 CSON = require 'cson'
+fs = require 'fs'
 
 stores =
   invites: (query, callback) ->
@@ -17,8 +19,6 @@ stores =
           if err?
             console.log err
             return cb()
-          console.log filename
-          console.log results
           result[key] = results
           cb()
       for key, value of query
@@ -32,6 +32,8 @@ stores =
 app = express()
 
 app.use compression()
+app.use bodyParser.urlencoded extended: yes
+app.use bodyParser.json()
 
 oneDay = 1000 * 60 * 60 * 24
 app.use express.static __dirname, maxAge: oneDay
@@ -44,6 +46,14 @@ app.get '/query', (req, res) ->
       res.json err
       return
     res.json results
+
+app.post '/submit', (req, res) ->
+  filename = "#{req.query.code}.cson"
+  filepath = path.join __dirname, 'data', filename
+  data = CSON.stringify req.body
+  fs.writeFile filepath, data, (err) ->
+    throw err if err?
+    res.end 'ok'
 
 app.get '/*', (req, res) ->
   console.log req.url

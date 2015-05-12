@@ -3,6 +3,7 @@
 ###
 hub = require 'odo-hub'
 scene = require './scene'
+request = require 'superagent'
 
 # Log all events, with special logging for queries
 hub.all (e, description, p, cb) ->
@@ -42,5 +43,40 @@ hub.every 'navigate to the default page', (p, cb) ->
 hub.every 'navigation error, {pathname} not found', (p, cb) ->
   scene.update page:
     name: 'error'
-    message: "#{p.pathname} not found"
+    message: "Sorry, the \"#{p.pathname}\" page was not found."
   cb()
+
+hub.every 'event error, {code} not found', (p, cb) ->
+  scene.update page:
+    name: 'error'
+    message: "Sorry, the event code \"#{p.code}\" was not found."
+  cb()
+
+hub.every 'event error, {code} submit failed', (p, cb) ->
+  scene.update page:
+    name: 'error'
+    message: 'Sorry, something went wrong. Refresh to try again?'
+  cb()
+
+hub.every 'event submit {code} success', (p, cb) ->
+  page = scene.params().page
+  page.success = yes
+  scene.update page: page
+  cb()
+
+hub.every 'event code {code} submitted', (p, cb) ->
+  request
+    .post '/submit'
+    .query code: p.code
+    .send p.data
+    .end (err, res) ->
+      console.log err
+      console.log res
+      debugger;
+      #cb()
+      # if err? or !res.ok
+      #   console.error err
+      #   hub.emit 'event error, {code} submit failed', p
+      #   return
+      #hub.emit 'event submit {code} success', p
+

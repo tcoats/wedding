@@ -29,7 +29,7 @@ inject.bind('page:error', component({
         }, [
           svg('svg', titileattr, [
             svg('use', {
-              'xlink:href': "/dist/wedding-1.0.0.min.svg#title"
+              'xlink:href': "/dist/wedding-1.0.0.min.svg#emblem"
             })
           ])
         ]), dom('div', [dom('h1', params.page.message), dom('p', params.page.details)])

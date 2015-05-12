@@ -4,6 +4,7 @@ ql = require 'odoql/ql'
 hub = require 'odo-hub'
 form2js = require '../plumbing/form2js'
 emblem = require './emblem'
+extend = require 'extend'
 
 rsvp = component render: (state, params) ->
   return dom 'span' if !state?
@@ -63,16 +64,25 @@ rsvp = component render: (state, params) ->
 
 inject.bind 'page:default', component
   query: (params) ->
-    invite: ql.query 'invites', 'asdf'
+    invite: ql.query 'invites', params.page.code
   render: (state, params) ->
+    if !state.invite?
+      setTimeout(->
+        hub.emit 'event error, {code} not found', params.page
+      , 20)
+      return dom 'div'
     submit = (e) ->
       data = form2js e.target, null, no
-      console.log JSON.stringify data, null, 2
+      data = extend {}, {to: state.invite.to}, data
+      hub.emit 'event code {code} submitted',
+        code: params.page.code
+        data: data
       e.preventDefault()
     titileattr =
       attributes:
         class: 'title'
         src: '/title.png'
+    
     dom 'div', { attributes: class: 'wrapper' }, [
       emblem()
       dom 'h1', state.invite.to
@@ -82,6 +92,15 @@ inject.bind 'page:default', component
         dom 'br'
         'Thomas Coats & Harvinder Kaur'
       ]
+      
+      if state.invite['prewedding']?
+        dom 'div', [
+          dom 'p', 'Thomas and Harvinder have chosen to celebrate their wedding over two days to include the Punjabi wedding traditions.'
+        ]
+      else
+        dom 'div', [
+          dom 'p', 'Thomas and Harvinder have chosen to follow the traditional Punjabi wedding ceremony.'
+        ]
       
       if state.invite['prewedding']?
         dom 'div', [
@@ -101,7 +120,7 @@ inject.bind 'page:default', component
           ]
           dom 'p', 'Vatna the bride and groom are washed with turmeric, mustard oil and chick pea flour.'
           dom 'p', 'Mehndi, also known as Henna, is a paste used to draw designs on the skin.'
-          dom 'p', 'Jaggo is celebration dancing and loud noises to invite the neighbours to the wedding.'
+          dom 'p', 'Jaggo is celebration dancing and loud noises to invite the neighbours to the wedding (symbolically, not literally).'
           dom 'p', 'Choora are bangles worn by the bride.'
           dom 'ul', [
             dom 'li', 'We would appreciate if everyone coming contributed a plate to the lunch or dinner.'
@@ -121,7 +140,6 @@ inject.bind 'page:default', component
             dom 'br'
             dom 'a', { attributes: href: 'https://www.google.co.nz/maps/place/New+Zealand+Sikh+Society+Hamilton/@-37.71328,175.211584,17z/data=!3m1!4b1!4m2!3m1!1s0x6d6d23350d4539e1:0x16a1c12e4ab4036a'}, 'Te Rapa Sikh Gurdwara'
           ]
-          dom 'pre', '8:30am - 1pm\nSaturday 3rd October\nTe Rapa Sikh Gurdwara'
           dom 'p', 'Anand Karaj literally translates as "Blissful Union" and is the Sikh marriage ceremony in which two individuals are joined in an equal partnership. A Sikh wedding involves greetings, breakfast, the ceremony, lunch and farewell.'
           dom 'p', 'Milni the bride’s side act as hosts and welcome the groom’s side to the temple and to the wedding. The bride herself remains in a back room of the temple until the beginning of the ceremony.'
           dom 'p', 'Breakfast is then served to the arriving guests.'
@@ -159,6 +177,7 @@ inject.bind 'page:default', component
             dom 'br'
             dom 'a', { attributes: href: 'https://www.google.co.nz/maps/place/Bow+Street+Studios/@-37.799761,174.867363,17z/data=!3m1!4b1!4m2!3m1!1s0x6d12d41762787c37:0xdaa5f7641ec6868c'}, 'Bow Street Studios'
           ]
+          dom 'p', 'Dinner and drinks with the happy couple.'
         ]
       else
         dom 'span'
@@ -173,9 +192,91 @@ inject.bind 'page:default', component
             dom 'br'
             dom 'a', { attributes: href: 'https://www.google.co.nz/maps/place/Raglan+Roast/@-37.800179,174.868397,17z/data=!3m1!4b1!4m2!3m1!1s0x6d12d4176d6a36f9:0x3a3e2a740ee1d2a5'}, 'Raglan Roast'
           ]
+          dom 'p', 'We invite anyone staying in Raglan to join us for our morning breakfast and to say our goodbyes before we depart.'
         ]
       
+      if state.invite['breakfast']? or state.invite['ceremony']?
+        dom 'div', [
+          dom 'h2', 'Accomodation'
+          dom 'p', 'There are several places to stay in and around Raglan.'
+          
+          dom 'a', { attributes: href: 'http://www.raglansunsetmotel.co.nz/' }, 'Raglan Sunset Motel'
+          dom 'p', 'Raglan Sunset Motel features 24 units offering a range of accommodation, studio units, Family Studios for up to 5 people an Executive unit and a 2 Bedroom self contained apartment for up to 8 people.'
+          
+          dom 'a', { attributes: href: 'https://www.facebook.com/raglanpalm' }, 'Raglan Palm Beach Motel'
+          dom 'p', 'Family and single motel units. Canoes and kayaks available.'
+          
+          dom 'a', { attributes: href: 'http://www.raglanholidaypark.co.nz/' }, 'Raglan Kopua Holiday Park'
+          dom 'p', 'Raglan Kopua Holiday Park offers tent, campervan or caravan, backpacker, cabin and motel units.'
+          
+          dom 'a', { attributes: href: 'http://www.hiddenvalleyraglan.com/' }, 'Hidden Valley Luxury Retreat'
+          dom 'p', 'Two studio rooms each with private spa and Tree Tops Spa Chalet – our most private and luxurious accommodation.'
+          
+          dom 'a', { attributes: href: 'http://raglanfarmstay.com/' }, 'Raglan Farmstay'
+          dom 'p', 'Rooms in the old Farmhouse are available along with two new wood lined cabins. Also available is a sleep out with five beds.'
+          
+          dom 'a', { attributes: href: 'http://www.raglan.net.nz/2009/10/harbour-view-hotel/' }, 'Harbour View Hotel'
+          dom 'p', 'The hotel boasts 3 double rooms, 3 twin, 1 single and 2 family rooms (one sleeping up to 5 and the other up to 4).'
+          
+          dom 'a', { attributes: href: 'http://www.oceanviewraglan.com/' }, 'Ocean View Raglan'
+          dom 'p', 'Bed and Breakfast. There are several rooms available with either king single, queen or king beds to suit whatever your needs.'
+          
+          dom 'a', { attributes: href: 'http://www.solscape.co.nz/' }, 'Solscape'
+          dom 'p', 'Eco accomodation. Stay in self contained cottages, recycled railway cabooses, earth domes or a Tipi Forest.'
+        ]
+      
+      dom 'div', [
+        dom 'h2', 'Notes'
+        dom 'p', 'A wedding gift is not required but gratefully received.'
+        dom 'p', 'We have been living together for more than six years and have an established house full of furniture and appliances. Instead of a material gift we would very much appreciate a contribution to our honeymoon.'
+        dom 'p', 'Sponsoring part of our holiday will help us celebrate your contribution. We can think of you at that time.'
+        dom 'p', 'Here are some ideas for sponsoring.'
+        dom 'ol', [
+          dom 'li', 'A roadside snack'
+          dom 'li', 'A meal together'
+          dom 'li', 'An activity during the day'
+          dom 'li', 'Accomodation for one night'
+          dom 'li', 'A short flight to a neighbouring area'
+          dom 'li', 'A flight to a distant land'
+        ]
+        dom 'p', 'If you decide to sponsor part of our honeymoon, thank you! And please let us know so we can think of you.'
+        dom 'div', { attributes: class: 'grid grid--top' }, [
+          dom 'div', [
+            dom 'h4', 'International:'
+            dom 'strong', 'Our details:'
+            dom 'br'
+            'T P Coats, K Harvinder'
+            dom 'br'
+            '3 Sandes Street,'
+            dom 'br'
+            'Ohaupo 3803'
+            dom 'br'
+            dom 'br'
+            dom 'strong', 'Bank details:'
+            dom 'br'
+            'Citibank N.A, 23 Customs St, Auckland, New Zealand'
+            dom 'br'
+            dom 'strong', 'SWIFT code:'
+            dom 'span', ' CITINZ2X'
+            dom 'br'
+            'Your full name and street address is needed (not PO Box)'
+            dom 'br'
+            '38-9004-0745246-01'
+          ]
+          dom 'div', [
+            dom 'h4', 'Within New Zealand:'
+            'T P Coats, K Harvinder'
+            dom 'br'
+            'Kiwibank'
+            dom 'br'
+            '38-9004-0745246-01'
+          ]
+        ]
+      ]
+      
       dom 'hr'
+      
+      dom 'h2', 'RSVP'
       
       dom 'form', { onsubmit: submit }, [
         rsvp state.invite['prewedding'],
@@ -192,8 +293,10 @@ inject.bind 'page:default', component
           eventtitle: 'RSVP to Breakfast'
         dom 'label', { attributes: class: 'comments' }, [
           dom 'span', 'Comments'
-          dom 'textarea'
+          dom 'textarea', { attributes: name: 'comments' }
         ]
         dom 'button', { attributes: type: 'submit' }, 'Save RSVP'
+        if params.page.success
+          dom 'div', 'Thank you, this RSVP has been saved. If you need to update any details just revisit this page and click save again.'
       ]
     ]

@@ -1,32 +1,29 @@
-to: 'Wolf'
-
-'prewedding':
-  going: yes
-  attending: [
-    'Wolf'
-    ''
-  ]
-
-'ceremony':
-  going: no
-  attending: [
-    'Wolf'
-    ''
-    ''
-    ''
-    ''
-  ]
-
-'reception':
-  going: no
-  attending: [
-    'Wolf'
-    ''
-  ]
-
-'breakfast':
-  going: no
-  attending: [
-    'Wolf'
-    ''
-  ]
+to: "Person's Name"
+prewedding:
+	going: false
+	attending: [
+		"Person's Name"
+		""
+	]
+ceremony:
+	going: false
+	attending: [
+		"Person's Name"
+		""
+		""
+		""
+		""
+	]
+reception:
+	going: false
+	attending: [
+		"Person's Name"
+		""
+	]
+breakfast:
+	going: false
+	attending: [
+		"Person's Name"
+		""
+	]
+comments: ""

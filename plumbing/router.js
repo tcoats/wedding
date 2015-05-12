@@ -9,7 +9,7 @@ hub = require('odo-hub');
 
 page = require('page');
 
-page('/:invite', function(e) {
+page('/:code', function(e) {
   return hub.emit('navigate to the default page', e.params);
 });
 

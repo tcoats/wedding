@@ -11,7 +11,7 @@ inject.bind 'page:error', component render: (state, params) ->
     dom 'div', [
       dom 'div', { attributes: class: 'logo' }, [
         svg 'svg', titileattr, [
-          svg 'use', { 'xlink:href': "/dist/wedding-1.0.0.min.svg#title" }
+          svg 'use', { 'xlink:href': "/dist/wedding-1.0.0.min.svg#emblem" }
         ]
       ]
       dom 'div', [

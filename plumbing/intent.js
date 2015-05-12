@@ -3,11 +3,13 @@
 /*
   Register things to do when various events fire
  */
-var hub, scene;
+var hub, request, scene;
 
 hub = require('odo-hub');
 
 scene = require('./scene');
+
+request = require('superagent');
 
 hub.all(function(e, description, p, cb) {
   var timings;
@@ -66,8 +68,48 @@ hub.every('navigation error, {pathname} not found', function(p, cb) {
   scene.update({
     page: {
       name: 'error',
-      message: p.pathname + " not found"
+      message: "Sorry, the \"" + p.pathname + "\" page was not found."
     }
   });
   return cb();
+});
+
+hub.every('event error, {code} not found', function(p, cb) {
+  scene.update({
+    page: {
+      name: 'error',
+      message: "Sorry, the event code \"" + p.code + "\" was not found."
+    }
+  });
+  return cb();
+});
+
+hub.every('event error, {code} submit failed', function(p, cb) {
+  scene.update({
+    page: {
+      name: 'error',
+      message: 'Sorry, something went wrong. Refresh to try again?'
+    }
+  });
+  return cb();
+});
+
+hub.every('event submit {code} success', function(p, cb) {
+  var page;
+  page = scene.params().page;
+  page.success = true;
+  scene.update({
+    page: page
+  });
+  return cb();
+});
+
+hub.every('event code {code} submitted', function(p, cb) {
+  return request.post('/submit').query({
+    code: p.code
+  }).send(p.data).end(function(err, res) {
+    console.log(err);
+    console.log(res);
+    debugger;
+  });
 });
