@@ -3,13 +3,15 @@
 /*
   Register things to do when various events fire
  */
-var hub, request, scene;
+var hub, request, scene, xhr;
 
 hub = require('odo-hub');
 
 scene = require('./scene');
 
 request = require('superagent');
+
+xhr = require('xhr');
 
 hub.all(function(e, description, p, cb) {
   var timings;
@@ -95,21 +97,23 @@ hub.every('event error, {code} submit failed', function(p, cb) {
 });
 
 hub.every('event submit {code} success', function(p, cb) {
-  var page;
-  page = scene.params().page;
-  page.success = true;
   scene.update({
-    page: page
+    success: true
   });
   return cb();
 });
 
 hub.every('event code {code} submitted', function(p, cb) {
+  require('page').stop();
   return request.post('/submit').query({
     code: p.code
   }).send(p.data).end(function(err, res) {
-    console.log(err);
-    console.log(res);
-    debugger;
+    cb();
+    if ((err != null) || !res.ok) {
+      console.error(err);
+      hub.emit('event error, {code} submit failed', p);
+      return;
+    }
+    return hub.emit('event submit {code} success', p);
   });
 });

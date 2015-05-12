@@ -4,6 +4,7 @@
 hub = require 'odo-hub'
 scene = require './scene'
 request = require 'superagent'
+xhr = require 'xhr'
 
 # Log all events, with special logging for queries
 hub.all (e, description, p, cb) ->
@@ -59,24 +60,20 @@ hub.every 'event error, {code} submit failed', (p, cb) ->
   cb()
 
 hub.every 'event submit {code} success', (p, cb) ->
-  page = scene.params().page
-  page.success = yes
-  scene.update page: page
+  scene.update success: yes
   cb()
 
 hub.every 'event code {code} submitted', (p, cb) ->
+  require('page').stop()
   request
     .post '/submit'
     .query code: p.code
     .send p.data
     .end (err, res) ->
-      console.log err
-      console.log res
-      debugger;
-      #cb()
-      # if err? or !res.ok
-      #   console.error err
-      #   hub.emit 'event error, {code} submit failed', p
-      #   return
-      #hub.emit 'event submit {code} success', p
+      cb()
+      if err? or !res.ok
+        console.error err
+        hub.emit 'event error, {code} submit failed', p
+        return
+      hub.emit 'event submit {code} success', p
 

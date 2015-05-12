@@ -72,12 +72,13 @@ inject.bind 'page:default', component
       , 20)
       return dom 'div'
     submit = (e) ->
+      e.preventDefault()
       data = form2js e.target, null, no
       data = extend {}, {to: state.invite.to}, data
       hub.emit 'event code {code} submitted',
         code: params.page.code
         data: data
-      e.preventDefault()
+      no
     titileattr =
       attributes:
         class: 'title'
@@ -99,7 +100,7 @@ inject.bind 'page:default', component
         ]
       else
         dom 'div', [
-          dom 'p', 'Thomas and Harvinder have chosen to follow the traditional Punjabi wedding ceremony.'
+          dom 'p', 'Thomas and Harvinder have chosen to follow a traditional Punjabi wedding ceremony.'
         ]
       
       if state.invite['prewedding']?
@@ -195,7 +196,7 @@ inject.bind 'page:default', component
           dom 'p', 'We invite anyone staying in Raglan to join us for our morning breakfast and to say our goodbyes before we depart.'
         ]
       
-      if state.invite['breakfast']? or state.invite['ceremony']?
+      if state.invite['breakfast']? or state.invite['prewedding']?
         dom 'div', [
           dom 'h2', 'Accomodation'
           dom 'p', 'There are several places to stay in and around Raglan.'
@@ -293,10 +294,10 @@ inject.bind 'page:default', component
           eventtitle: 'RSVP to Breakfast'
         dom 'label', { attributes: class: 'comments' }, [
           dom 'span', 'Comments'
-          dom 'textarea', { attributes: name: 'comments' }
+          dom 'textarea', { value: state.invite.comments, attributes: name: 'comments' }
         ]
         dom 'button', { attributes: type: 'submit' }, 'Save RSVP'
-        if params.page.success
+        if params.success
           dom 'div', 'Thank you, this RSVP has been saved. If you need to update any details just revisit this page and click save again.'
       ]
     ]

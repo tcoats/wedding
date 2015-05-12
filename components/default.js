@@ -108,6 +108,7 @@ inject.bind('page:default', component({
     }
     submit = function(e) {
       var data;
+      e.preventDefault();
       data = form2js(e.target, null, false);
       data = extend({}, {
         to: state.invite.to
@@ -116,7 +117,7 @@ inject.bind('page:default', component({
         code: params.page.code,
         data: data
       });
-      return e.preventDefault();
+      return false;
     };
     titileattr = {
       attributes: {
@@ -133,7 +134,7 @@ inject.bind('page:default', component({
         attributes: {
           "class": 'large'
         }
-      }, ['You are invited to the Wedding of ', dom('br'), 'Thomas Coats & Harvinder Kaur']), state.invite['prewedding'] != null ? dom('div', [dom('p', 'Thomas and Harvinder have chosen to celebrate their wedding over two days to include the Punjabi wedding traditions.')]) : dom('div', [dom('p', 'Thomas and Harvinder have chosen to follow the traditional Punjabi wedding ceremony.')]), state.invite['prewedding'] != null ? dom('div', [
+      }, ['You are invited to the Wedding of ', dom('br'), 'Thomas Coats & Harvinder Kaur']), state.invite['prewedding'] != null ? dom('div', [dom('p', 'Thomas and Harvinder have chosen to celebrate their wedding over two days to include the Punjabi wedding traditions.')]) : dom('div', [dom('p', 'Thomas and Harvinder have chosen to follow a traditional Punjabi wedding ceremony.')]), state.invite['prewedding'] != null ? dom('div', [
         dom('h2', 'Maiyan'), dom('p', [
           '10am - 10pm', dom('br'), 'Friday 2nd October', dom('br'), dom('a', {
             attributes: {
@@ -171,7 +172,7 @@ inject.bind('page:default', component({
             }
           }, 'Raglan Roast')
         ]), dom('p', 'We invite anyone staying in Raglan to join us for our morning breakfast and to say our goodbyes before we depart.')
-      ]) : void 0, (state.invite['breakfast'] != null) || (state.invite['ceremony'] != null) ? dom('div', [
+      ]) : void 0, (state.invite['breakfast'] != null) || (state.invite['prewedding'] != null) ? dom('div', [
         dom('h2', 'Accomodation'), dom('p', 'There are several places to stay in and around Raglan.'), dom('a', {
           attributes: {
             href: 'http://www.raglansunsetmotel.co.nz/'
@@ -232,6 +233,7 @@ inject.bind('page:default', component({
           }
         }, [
           dom('span', 'Comments'), dom('textarea', {
+            value: state.invite.comments,
             attributes: {
               name: 'comments'
             }
@@ -240,7 +242,7 @@ inject.bind('page:default', component({
           attributes: {
             type: 'submit'
           }
-        }, 'Save RSVP'), params.page.success ? dom('div', 'Thank you, this RSVP has been saved. If you need to update any details just revisit this page and click save again.') : void 0
+        }, 'Save RSVP'), params.success ? dom('div', 'Thank you, this RSVP has been saved. If you need to update any details just revisit this page and click save again.') : void 0
       ])
     ]);
   }

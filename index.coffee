@@ -51,12 +51,12 @@ app.post '/submit', (req, res) ->
   filename = "#{req.query.code}.cson"
   filepath = path.join __dirname, 'data', filename
   data = CSON.stringify req.body
+  console.log data
   fs.writeFile filepath, data, (err) ->
     throw err if err?
     res.end 'ok'
 
 app.get '/*', (req, res) ->
-  console.log req.url
   res.sendFile path.join __dirname, 'index.html'
 
 port = 8085
