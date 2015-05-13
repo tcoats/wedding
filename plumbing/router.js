@@ -9,6 +9,10 @@ hub = require('odo-hub');
 
 page = require('page');
 
+page('/', function(e) {
+  return hub.emit('navigate to the front page');
+});
+
 page('/:code', function(e) {
   return hub.emit('navigate to the default page', e.params);
 });

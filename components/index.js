@@ -2,3 +2,5 @@
 require('./errors');
 
 require('./default');
+
+require('./front');

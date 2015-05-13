@@ -88,7 +88,6 @@ app.post('/submit', function(req, res) {
   filename = req.query.code + ".cson";
   filepath = path.join(__dirname, 'data', filename);
   data = CSON.stringify(req.body);
-  console.log(data);
   return fs.writeFile(filepath, data, function(err) {
     if (err != null) {
       throw err;

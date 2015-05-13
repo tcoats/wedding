@@ -41,6 +41,10 @@ hub.every 'navigate to the default page', (p, cb) ->
   scene.update page: name: 'default', code: p.code
   cb()
 
+hub.every 'navigate to the front page', (p, cb) ->
+  scene.update page: name: 'front'
+  cb()
+
 hub.every 'navigation error, {pathname} not found', (p, cb) ->
   scene.update page:
     name: 'error'

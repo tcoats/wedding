@@ -66,6 +66,15 @@ hub.every('navigate to the default page', function(p, cb) {
   return cb();
 });
 
+hub.every('navigate to the front page', function(p, cb) {
+  scene.update({
+    page: {
+      name: 'front'
+    }
+  });
+  return cb();
+});
+
 hub.every('navigation error, {pathname} not found', function(p, cb) {
   scene.update({
     page: {
