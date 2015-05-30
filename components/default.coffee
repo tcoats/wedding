@@ -9,6 +9,8 @@ extend = require 'extend'
 rsvp = component render: (state, params) ->
   return dom 'span' if !state?
   
+  console.log state
+  
   nameinput = (index, name, cb) ->
     dom 'div', [
       dom 'input',
@@ -278,6 +280,8 @@ inject.bind 'page:default', component
       dom 'hr'
       
       dom 'h2', 'RSVP'
+      
+      dom 'p', 'Please RSVP by 1st July 2015. We would greatly appreciate if our wedding was an adult only event, thank you.'
       
       dom 'form', { onsubmit: submit }, [
         rsvp state.invite['prewedding'],

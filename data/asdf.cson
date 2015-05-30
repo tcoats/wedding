@@ -1,29 +1,32 @@
-to: "Person's Name"
+to: "Boyana and Family"
 prewedding:
 	going: false
 	attending: [
-		"Person's Name"
+		""
 		""
 	]
 ceremony:
-	going: true
+	going: yes
 	attending: [
-		"Better Name"
 		""
 		""
 		""
 		""
-	]
+		""
+		""
+		""
+		""
+]
 reception:
 	going: false
 	attending: [
-		"Person's Name"
+		""
 		""
 	]
 breakfast:
 	going: false
 	attending: [
-		"Person's Name"
+		""
 		""
 	]
 comments: "Test"
