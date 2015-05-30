@@ -132,11 +132,11 @@ inject.bind('page:default', component({
         "class": 'wrapper'
       }
     }, [
-      emblem(), dom('h1', state.invite.to), dom('p', {
+      emblem(), dom('h1', state.invite.to), dom('img', {
         attributes: {
-          "class": 'large'
+          src: '/dist/welcome.png'
         }
-      }, ['You are invited to the Wedding of ', dom('br'), 'Thomas Coats & Harvinder Kaur']), state.invite['prewedding'] != null ? dom('div', [dom('p', 'Thomas and Harvinder have chosen to celebrate their wedding over two days to include the Punjabi wedding traditions.')]) : dom('div', [dom('p', 'Thomas and Harvinder have chosen to follow a traditional Punjabi wedding ceremony.')]), state.invite['prewedding'] != null ? dom('div', [
+      }), state.invite['prewedding'] != null ? dom('div', [dom('p', 'Thomas and Harvinder have chosen to celebrate their wedding over two days to include the Punjabi wedding traditions.')]) : dom('div', [dom('p', 'Thomas and Harvinder have chosen to follow a traditional Punjabi wedding ceremony.')]), state.invite['prewedding'] != null ? dom('div', [
         dom('h2', 'Maiyan'), dom('p', [
           '10am - 10pm', dom('br'), 'Friday 2nd October', dom('br'), dom('a', {
             attributes: {

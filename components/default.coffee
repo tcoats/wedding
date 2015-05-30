@@ -89,11 +89,7 @@ inject.bind 'page:default', component
       emblem()
       dom 'h1', state.invite.to
       
-      dom 'p', { attributes: class: 'large' }, [
-        'You are invited to the Wedding of '
-        dom 'br'
-        'Thomas Coats & Harvinder Kaur'
-      ]
+      dom 'img', attributes: src: '/dist/welcome.png'
       
       if state.invite['prewedding']?
         dom 'div', [
