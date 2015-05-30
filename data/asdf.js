@@ -6,7 +6,7 @@
     attending: ["", ""]
   },
   ceremony: {
-    going: true,
+    going: false,
     attending: ["", "", "", "", "", "", "", ""]
   },
   reception: {

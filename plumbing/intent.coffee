@@ -57,6 +57,10 @@ hub.every 'event error, {code} submit failed', (p, cb) ->
     message: 'Sorry, something went wrong. Refresh to try again?'
   cb()
 
+hub.every 'show bank details', (p, cb) ->
+  scene.update showbankdetails: yes
+  cb()
+
 hub.every 'event submit {code} success', (p, cb) ->
   scene.update success: yes
   cb()

@@ -89,6 +89,13 @@ hub.every('event error, {code} submit failed', function(p, cb) {
   return cb();
 });
 
+hub.every('show bank details', function(p, cb) {
+  scene.update({
+    showbankdetails: true
+  });
+  return cb();
+});
+
 hub.every('event submit {code} success', function(p, cb) {
   scene.update({
     success: true

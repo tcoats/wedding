@@ -6,7 +6,7 @@ prewedding:
 		""
 	]
 ceremony:
-	going: yes
+	going: false
 	attending: [
 		""
 		""
