@@ -13,14 +13,10 @@ livereload = require 'gulp-livereload'
 gulp.task 'watch', ['watchcoffee'], ->
   livereload.listen()
   gulp.watch 'svg/*.svg', ['svg']
-  gulp.watch [
-    'components/*.styl',
-    'style/*.styl'], ['style']
+  gulp.watch ['index.styl'], ['style']
   gulp.watch [
     'index.html',
-    'components/*.html',
-    'data/*.cson',
-    'plumbing/*.html'], ['html']
+    'data/*.cson'], ['html']
 
 # build everything
 gulp.task 'build', ['svg', 'style', 'coffee']
@@ -56,7 +52,7 @@ minifycss = require 'gulp-minify-css'
 
 # compress stylus files and library css together
 gulp.task 'style', ->
-  gulp.src 'style/index.styl'
+  gulp.src 'index.styl'
     .pipe sourcemaps.init()
     .pipe stylus
       'include css': yes

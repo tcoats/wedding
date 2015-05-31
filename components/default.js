@@ -5,11 +5,13 @@ ref = require('odojs'), component = ref.component, dom = ref.dom, widget = ref.w
 
 inject = require('injectinto');
 
-ql = require('odoql/ql');
+ql = require('odoql');
+
+ql = ql.use('store');
 
 hub = require('odo-hub');
 
-form2js = require('../plumbing/form2js');
+form2js = require('../form2js');
 
 emblem = require('./emblem');
 
@@ -97,7 +99,7 @@ rsvp = component({
 inject.bind('page:default', component({
   query: function(params) {
     return {
-      invite: ql.query('invites', params.page.code)
+      invite: ql.store(params.page.code, 'invite')
     };
   },
   render: function(state, params) {

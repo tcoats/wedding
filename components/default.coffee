@@ -1,8 +1,9 @@
 { component, dom, widget } = require 'odojs'
 inject = require 'injectinto'
-ql = require 'odoql/ql'
+ql = require 'odoql'
+ql = ql.use 'store'
 hub = require 'odo-hub'
-form2js = require '../plumbing/form2js'
+form2js = require '../form2js'
 emblem = require './emblem'
 gift = require './gift'
 extend = require 'extend'
@@ -65,7 +66,7 @@ rsvp = component render: (state, params) ->
 
 inject.bind 'page:default', component
   query: (params) ->
-    invite: ql.query 'invites', params.page.code
+    invite: ql.store params.page.code, 'invite'
   render: (state, params) ->
     if !state.invite?
       setTimeout(->

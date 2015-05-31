@@ -1,3 +1,12 @@
+@import "./node_modules/flexy-grid/flexy-grid"
+
+$brand-primary      = #961C00
+$brand-secondary    = #FA9F00
+$brand-highlight    = #329A8B
+$background-primary = rgb(255, 255, 255)
+$foreground-primary = rgb(30, 27, 28)
+$foreground-inverse = rgb(212, 212, 212)
+
 html, body
   background none
   color $brand-primary
@@ -6,9 +15,16 @@ html, body
   font-size 20px
 
 html
-  background-image url('/style/pattern.png')
+  background-image url('/dist/pattern.png')
   background-position center top
   background-size 60px 60px
+
+.icon
+  width 32px
+  height 32px
+  pointer-events none
+svg
+  fill none
 
 .wrapper
   background-color $background-primary
@@ -65,7 +81,7 @@ label
   font-weight normal
 
 p.poem
-  font-size 0.9em
+  font-size 0.6em
   text-align center
   line-height 2em
   margin-bottom 3em

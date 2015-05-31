@@ -1,5 +1,6 @@
 { component, dom, svg } = require 'odojs'
 inject = require 'injectinto'
+pjson = require '../package.json'
 
 inject.bind 'page:front', component render: (state, params) ->
   titileattr =
@@ -11,7 +12,7 @@ inject.bind 'page:front', component render: (state, params) ->
     dom 'div', [
       dom 'div', { attributes: class: 'logo' }, [
         svg 'svg', titileattr, [
-          svg 'use', { 'xlink:href': "/dist/wedding-1.0.0.min.svg#emblem" }
+          svg 'use', { 'xlink:href': "/dist/#{pjson.name}-#{pjson.version}.min.svg#emblem" }
         ]
       ]
       dom 'div', [

@@ -1,7 +1,7 @@
 {
   "name": "wedding",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -45,12 +45,12 @@
     "injectinto": "1.2.0",
     "odo-async": "1.0.0",
     "odo-hub": "1.1.0",
-    "odo-relay": "0.1.0",
+    "odo-relay": "2.1.6",
     "odo-statistics": "1.0.1",
-    "odojs": "4.0.3",
-    "odoql": "6.0.0",
-    "odoql-json": "0.0.1",
-    "odoql-localstorage": "0.0.1",
+    "odojs": "4.2.0",
+    "odoql": "7.5.0",
+    "odoql-exe": "1.2.4",
+    "odoql-store": "0.1.0",
     "page": "1.6.1",
     "superagent": "^1.2.0",
     "svg4everybody": "0.0.2"
