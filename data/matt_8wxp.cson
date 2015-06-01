@@ -1,22 +1,11 @@
-to: "Boyana and Family"
-prewedding:
-	going: false
-	attending: [
-		""
-		""
-	]
+To: "Mathew Spice"
+comments: ""
 ceremony:
 	going: false
 	attending: [
 		""
 		""
-		""
-		""
-		""
-		""
-		""
-		""
-]
+	]
 reception:
 	going: false
 	attending: [
@@ -29,4 +18,3 @@ breakfast:
 		""
 		""
 	]
-comments: "Test"
