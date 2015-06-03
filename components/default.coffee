@@ -59,6 +59,7 @@ rsvp = component render: (state, params) ->
     whoattrs.style = 'display: none;'
   
   contents.push dom 'div', attributes: whoattrs, [
+    dom 'p', 'We would appreciate if everyone coming to Maiyan could contribute a plate to the lunch or dinner' if params.eventid is 'prewedding'
     dom 'h3', 'Who is attending?'
     dom 'div', items
   ]

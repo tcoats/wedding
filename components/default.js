@@ -91,7 +91,7 @@ rsvp = component({
     }
     contents.push(dom('div', {
       attributes: whoattrs
-    }, [dom('h3', 'Who is attending?'), dom('div', items)]));
+    }, [params.eventid === 'prewedding' ? dom('p', 'We would appreciate if everyone coming to Maiyan could contribute a plate to the lunch or dinner') : void 0, dom('h3', 'Who is attending?'), dom('div', items)]));
     return dom('div', contents);
   }
 });
