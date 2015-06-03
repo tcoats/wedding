@@ -37,6 +37,7 @@ app.post '/query', (req, res, next) ->
     return next errors if errors?
     res.send results
 
+fs = require 'fs'
 app.post '/submit', (req, res) ->
   filename = "#{req.query.code}.cson"
   filepath = path.join __dirname, 'data', filename

@@ -130,6 +130,7 @@ hub.every 'event submit {code} success', (p, cb) ->
   scene.update success: yes
   cb()
 
+request = require 'superagent'
 hub.every 'event code {code} submitted', (p, cb) ->
   require('page').stop()
   request
