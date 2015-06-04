@@ -82,7 +82,7 @@ app.get('/*', function(req, res) {
   return res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-port = 8085;
+port = 80;
 
 app.listen(port);
 
