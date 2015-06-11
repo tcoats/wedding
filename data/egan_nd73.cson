@@ -1,8 +1,8 @@
 to: "Jo and CJ Egan"
-comments: ""
 ceremony:
-	going: false
+	going: true
 	attending: [
-		""
+		"jo egan"
 		""
 	]
+comments: ""

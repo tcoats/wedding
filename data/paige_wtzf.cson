@@ -1,22 +1,25 @@
 to: "Paige Lincoln"
-comments: ""
 prewedding:
-	going: false
+	going: true
 	attending: [
-		""
+		"Paige Lincoln (me)"
 	]
 ceremony:
-	going: false
+	going: true
 	attending: [
-		""
+		"Paige Lincoln (me)"
 	]
 reception:
-	going: false
+	going: true
 	attending: [
-		""
+		"Paige Lincoln (me)"
 	]
 breakfast:
-	going: false
+	going: true
 	attending: [
-		""
+		"Paige Lincoln (me)"
 	]
+comments: '''
+	Just to let you know I'm for sure coming.No way I would miss it for the world. Can't wait.
+	
+'''
