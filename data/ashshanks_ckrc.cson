@@ -1,21 +1,20 @@
 to: "Ashvinder Kaur and Shankaran Pillay Paramanathan"
-comments: ""
 prewedding:
-	going: false
+	going: true
 	attending: [
-		""
+		"Ash and Shank "
 		""
 	]
 ceremony:
-	going: false
+	going: true
 	attending: [
-		""
+		"Ash and Shank "
 		""
 	]
 reception:
-	going: false
+	going: true
 	attending: [
-		""
+		"Ash and Shank "
 		""
 	]
 breakfast:
@@ -24,3 +23,4 @@ breakfast:
 		""
 		""
 	]
+comments: ""
