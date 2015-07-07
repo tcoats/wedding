@@ -1,22 +1,26 @@
 to: "Jenny and Alan Somerville"
-comments: ""
 prewedding:
 	going: false
 	attending: [
 		""
+		""
 	]
 ceremony:
-	going: false
+	going: true
 	attending: [
-		""
+		"Jenny Somerville"
+		"Alan Somerville"
 	]
 reception:
-	going: false
+	going: true
 	attending: [
-		""
+		"Jenny Somerville"
+		"Alan Somerville"
 	]
 breakfast:
-	going: false
+	going: true
 	attending: [
-		""
+		"Jenny Somerville"
+		"Alan Somerville"
 	]
+comments: ""

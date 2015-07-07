@@ -1,22 +1,25 @@
 to: "Liam Somerville"
-comments: ""
 prewedding:
 	going: false
 	attending: [
 		""
 	]
 ceremony:
-	going: false
+	going: true
 	attending: [
-		""
+		"Liam Somerville"
+		"Ella"
 	]
 reception:
-	going: false
+	going: true
 	attending: [
-		""
+		"Liam Somerville"
+		"Ella"
 	]
 breakfast:
-	going: false
+	going: true
 	attending: [
-		""
+		"Liam Somerville"
+		"Ella"
 	]
+comments: ""
