@@ -1,22 +1,22 @@
 to: "Raja Matta"
-comments: ""
 prewedding:
-	going: false
+	going: true
 	attending: [
-		""
+		"Raja Matta"
 	]
 ceremony:
-	going: false
+	going: true
 	attending: [
-		""
+		"Raja Matta"
 	]
 reception:
-	going: false
+	going: true
 	attending: [
-		""
+		"Raja Matta"
 	]
 breakfast:
-	going: false
+	going: true
 	attending: [
-		""
+		"Raja Matta"
 	]
+comments: ""

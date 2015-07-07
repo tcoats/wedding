@@ -1,22 +1,22 @@
 to: "Masi Deba"
-comments: ""
 prewedding:
-	going: false
+	going: true
 	attending: [
-		""
+		"Masi Deba"
 	]
 ceremony:
-	going: false
+	going: true
 	attending: [
-		""
+		"Masi Deba"
 	]
 reception:
-	going: false
+	going: true
 	attending: [
-		""
+		"Masi Deba"
 	]
 breakfast:
-	going: false
+	going: true
 	attending: [
-		""
+		"Masi Deba"
 	]
+comments: ""

@@ -1,38 +1,38 @@
 to: "Masi Gudi and Family"
-comments: ""
 prewedding:
-	going: false
+	going: true
 	attending: [
-		""
+		"Masi Gudi"
 		""
 		""
 		""
 		""
 	]
 ceremony:
-	going: false
+	going: true
 	attending: [
-		""
+		"Masi Gudi"
 		""
 		""
 		""
 		""
 	]
 reception:
-	going: false
+	going: true
 	attending: [
-		""
+		"Masi Gudi"
 		""
 		""
 		""
 		""
 	]
 breakfast:
-	going: false
+	going: true
 	attending: [
-		""
+		"Masi Gudi"
 		""
 		""
 		""
 		""
 	]
+comments: ""

@@ -1,26 +1,26 @@
 to: "Paul and Gwen Steeds"
-comments: ""
 prewedding:
-	going: false
+	going: true
 	attending: [
-		""
-		""
+		"Paul Steeds"
+		"Gwen Steeds"
 	]
 ceremony:
-	going: false
+	going: true
 	attending: [
-		""
-		""
+		"Paul Steeds"
+		"Gwen Steeds"
 	]
 reception:
-	going: false
+	going: true
 	attending: [
-		""
-		""
+		"Paul Steeds"
+		"Gwen Steeds"
 	]
 breakfast:
-	going: false
+	going: true
 	attending: [
-		""
-		""
+		"Paul Steeds"
+		"Gwen Steeds"
 	]
+comments: "Sorry I'm a bit late... But YES we'll be there with bells on!!  Staying Raglan Sunset Motel Friday and Saturday nights.    Cheers,   G'pa/Paul 'n Gwen  xx"

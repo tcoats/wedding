@@ -1,5 +1,4 @@
 to: "Mr and Mrs Grewal and Family"
-comments: ""
 prewedding:
 	going: false
 	attending: [
@@ -9,10 +8,11 @@ prewedding:
 		""
 	]
 ceremony:
-	going: false
+	going: true
 	attending: [
-		""
+		"Harbir & Paramjit "
 		""
 		""
 		""
 	]
+comments: "sorry for the late reply  xxoo"

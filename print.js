@@ -17,11 +17,11 @@ for (i = 0, len = files.length; i < len; i++) {
   contents = CSON.load("./data/" + file);
   hasmodifier = false;
   keys = Object.keys(contents);
-  if (keys[1] !== 'comments') {
+  if (keys[1] === 'comments') {
     continue;
   }
-  console.log(contents.to);
-  continue;
+//  console.log(contents.to + ' ' + file);
+//  continue;
   going = false;
   ref = ['prewedding', 'ceremony', 'reception', 'breakfast'];
   for (j = 0, len1 = ref.length; j < len1; j++) {
