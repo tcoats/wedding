@@ -4,19 +4,23 @@ prewedding:
 	going: false
 	attending: [
 		""
+		""
 	]
 ceremony:
-	going: false
+	going: true
 	attending: [
-		""
+		"Jessica Somerville"
+		"Gareth"
 	]
 reception:
-	going: false
+	going: true
 	attending: [
-		""
+		"Jessica Somerville"
+		"Gareth"
 	]
 breakfast:
-	going: false
+	going: true
 	attending: [
-		""
+		"Jessica Somerville"
+		"Gareth"
 	]
