@@ -9,9 +9,9 @@ prewedding:
 ceremony:
 	going: true
 	attending: [
-		"Mr n Mrs Paramanathan & Bhina "
-		""
-		""
+		"Mr Paramanathan"
+		"Mrs Paramanathan"
+		"Bhina Paramanathan"
 	]
 reception:
 	going: false
