@@ -1,5 +1,4 @@
 to: "Jane Steeds, Phill Clark and Henry Hosford"
-comments: ""
 prewedding:
 	going: false
 	attending: [
@@ -8,9 +7,9 @@ prewedding:
 		""
 	]
 ceremony:
-	going: false
+	going: true
 	attending: [
-		""
+		"Jane and Phill"
 		""
 		""
 	]
@@ -28,3 +27,4 @@ breakfast:
 		""
 		""
 	]
+comments: ""

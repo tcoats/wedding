@@ -1,22 +1,22 @@
 to: "Josie Mossman"
-comments: ""
 prewedding:
-	going: false
+	going: true
 	attending: [
-		""
+		"Josie"
 	]
 ceremony:
-	going: false
+	going: true
 	attending: [
-		""
+		"Josie"
 	]
 reception:
-	going: false
+	going: true
 	attending: [
-		""
+		"Josie"
 	]
 breakfast:
 	going: false
 	attending: [
 		""
 	]
+comments: ""
