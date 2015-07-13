@@ -1,22 +1,22 @@
 to: "Kulraj Matta"
-comments: ""
 prewedding:
-	going: false
+	going: true
 	attending: [
-		""
+		"Kulraj Matta"
 	]
 ceremony:
-	going: false
+	going: true
 	attending: [
-		""
+		"Kulraj Matta"
 	]
 reception:
-	going: false
+	going: true
 	attending: [
-		""
+		"Kulraj Matta"
 	]
 breakfast:
-	going: false
+	going: true
 	attending: [
-		""
+		"Kulraj Matta"
 	]
+comments: ""

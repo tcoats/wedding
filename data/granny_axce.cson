@@ -1,22 +1,22 @@
 to: "Phyllis Coats"
-comments: ""
 prewedding:
-	going: false
+	going: true
 	attending: [
-		""
+		"Phyllis Coats"
 	]
 ceremony:
-	going: false
+	going: true
 	attending: [
-		""
+		"Phyllis Coats"
 	]
 reception:
-	going: false
+	going: true
 	attending: [
-		""
+		"Phyllis Coats"
 	]
 breakfast:
-	going: false
+	going: true
 	attending: [
-		""
+		"Phyllis Coats"
 	]
+comments: ""

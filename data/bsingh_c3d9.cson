@@ -1,10 +1,10 @@
 to: "Bhupinder Singh and Family"
-comments: ""
 ceremony:
-	going: false
+	going: true
 	attending: [
+		"Bhupinder Singh"
 		""
 		""
-    ""
-    ""
+		""
 	]
+comments: ""

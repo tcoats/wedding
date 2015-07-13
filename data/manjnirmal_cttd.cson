@@ -1,22 +1,21 @@
 to: "Manjit and Nirmal Nagra"
-comments: ""
 prewedding:
-	going: false
+	going: true
 	attending: [
-		""
-		""
+		"Manjit Nagra"
+		"Nirmal Nagra"
 	]
 ceremony:
-	going: false
+	going: true
 	attending: [
-		""
-		""
+		"Manjit Nagra"
+		"Nirmal Nagra"
 	]
 reception:
-	going: false
+	going: true
 	attending: [
-		""
-		""
+		"Manjit Nagra"
+		"Nirmal Nagra"
 	]
 breakfast:
 	going: false
@@ -24,3 +23,4 @@ breakfast:
 		""
 		""
 	]
+comments: ""

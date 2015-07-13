@@ -1,0 +1,26 @@
+to: "Tom and Havi"
+prewedding:
+	going: true
+	attending: [
+		"Havi Kaur"
+		"Thomas Coats"
+	]
+ceremony:
+	going: true
+	attending: [
+		"Havi Kaur"
+		"Thomas Coats"
+	]
+reception:
+	going: true
+	attending: [
+		"Havi Kaur"
+		"Thomas Coats"
+	]
+breakfast:
+	going: true
+	attending: [
+		"Havi Kaur"
+		"Thomas Coats"
+	]
+comments: "Probably should go to our own wedding"

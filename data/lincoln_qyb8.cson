@@ -1,26 +1,26 @@
 to: "Lincoln Family"
-comments: ""
 ceremony:
-	going: false
+	going: true
 	attending: [
-		""
-		""
+		"Clare Lincoln"
+		"Steve Lincoln"
 		""
 		""
 	]
 reception:
-	going: false
+	going: true
 	attending: [
-		""
-		""
+		"Clare Lincoln"
+		"Steve Lincoln"
 		""
 		""
 	]
 breakfast:
-	going: false
+	going: true
 	attending: [
-		""
-		""
+		"Clare Lincoln"
+		"Steve Lincoln"
 		""
 		""
 	]
+comments: ""

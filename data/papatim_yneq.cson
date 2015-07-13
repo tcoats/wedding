@@ -1,8 +1,8 @@
 to: "Tim Surgison"
-comments: ""
 ceremony:
-	going: false
+	going: true
 	attending: [
-		""
+		"Tim Surgison"
 		""
 	]
+comments: ""

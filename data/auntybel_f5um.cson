@@ -1,14 +1,13 @@
 to: "Aunty Bel"
-comments: ""
 prewedding:
-	going: false
+	going: true
 	attending: [
-		""
+		"Aunty Bel"
 	]
 ceremony:
-	going: false
+	going: true
 	attending: [
-		""
+		"Aunty Bel"
 	]
 reception:
 	going: false
@@ -20,3 +19,4 @@ breakfast:
 	attending: [
 		""
 	]
+comments: ""

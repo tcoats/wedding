@@ -1,7 +1,8 @@
 to: "Saleh and Shahgul Mohmand"
-comments: ""
 ceremony:
-	going: false
+	going: true
 	attending: [
-		""
+		"Saleh Mohmand"
+		"Shahgul Mohmand"
 	]
+comments: ""

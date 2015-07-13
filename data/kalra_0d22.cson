@@ -1,5 +1,4 @@
 to: "Mr and Mrs Jitendra Kalra"
-comments: ""
 prewedding:
 	going: false
 	attending: [
@@ -7,9 +6,9 @@ prewedding:
 		""
 	]
 ceremony:
-	going: false
+	going: true
 	attending: [
-		""
+		"Jitendra Kalra"
 		""
 	]
 reception:
@@ -24,3 +23,4 @@ breakfast:
 		""
 		""
 	]
+comments: ""

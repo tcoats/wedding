@@ -1,5 +1,4 @@
 to: "Grewal Family"
-comments: ""
 prewedding:
 	going: false
 	attending: [
@@ -8,9 +7,10 @@ prewedding:
 		""
 	]
 ceremony:
-	going: false
+	going: true
 	attending: [
-		""
+		"Dr Grewal"
 		""
 		""
 	]
+comments: ""

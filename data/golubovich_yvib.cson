@@ -1,11 +1,10 @@
 to: "Golubovich Family"
-comments: ""
 ceremony:
-	going: false
+	going: true
 	attending: [
-		""
-		""
-		""
+		"Tio Golubovich"
+		"Stoyanka"
+		"Brandon"
 		""
 	]
 reception:
@@ -24,3 +23,4 @@ breakfast:
 		""
 		""
 	]
+comments: ""
