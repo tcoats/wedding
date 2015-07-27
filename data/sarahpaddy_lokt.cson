@@ -1,5 +1,4 @@
 to: "Sarah Moss and Paddy Kennedy"
-comments: ""
 prewedding:
 	going: false
 	attending: [
@@ -9,7 +8,7 @@ prewedding:
 ceremony:
 	going: false
 	attending: [
-		""
+		"Paddy, Sarah, "
 		""
 	]
 reception:
@@ -24,3 +23,10 @@ breakfast:
 		""
 		""
 	]
+comments: '''
+	Sorry for the late notice! 
+	We would have really liked to have come, but with a young family, we would struggle to afford to make the journey up to you. We had a big discussion, but just can't make it work at that time. 
+	Congratulations on your day and I look forward to hearing about it from Mum and Josie.  
+	Lots of love 
+	Sarah and Paddy 
+'''

@@ -1,17 +1,17 @@
 to: "Tim Gunn"
-comments: ""
 ceremony:
-	going: false
+	going: true
 	attending: [
-		""
+		"Tim Gunn"
 	]
 reception:
-	going: false
+	going: true
 	attending: [
-		""
+		"Tim Gunn"
 	]
 breakfast:
 	going: false
 	attending: [
 		""
 	]
+comments: "Hi Thomas and Havi, finally RSVP'ing, sorry for the long delay. I don't think I will go to the B-fast just encase I go home the night before."

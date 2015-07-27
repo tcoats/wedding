@@ -9,18 +9,18 @@ ceremony:
 	going: true
 	attending: [
 		"Jessica Somerville"
-		"Gareth"
+		""
 	]
 reception:
 	going: true
 	attending: [
 		"Jessica Somerville"
-		"Gareth"
+		""
 	]
 breakfast:
-	going: true
+	going: false
 	attending: [
 		"Jessica Somerville"
-		"Gareth"
+		""
 	]
-comments: ""
+comments: "Thanks so much guys for the invite! Sounds like a really exciting celebration and it will be an honour to be there : )"

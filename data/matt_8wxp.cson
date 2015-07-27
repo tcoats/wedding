@@ -1,15 +1,14 @@
 to: "Mathew Spice"
-comments: ""
 ceremony:
-	going: false
+	going: true
 	attending: [
-		""
+		"Mathew Spice"
 		""
 	]
 reception:
-	going: false
+	going: true
 	attending: [
-		""
+		"Mathew Spice"
 		""
 	]
 breakfast:
@@ -18,3 +17,4 @@ breakfast:
 		""
 		""
 	]
+comments: ""
