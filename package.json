@@ -52,7 +52,7 @@
     "odoql-exe": "1.2.4",
     "odoql-store": "0.1.0",
     "page": "1.6.1",
-    "superagent": "^1.2.0",
+    "superagent": "^4.0.0-beta.5",
     "svg4everybody": "0.0.2"
   }
 }
